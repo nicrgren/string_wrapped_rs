@@ -3,6 +3,10 @@ name = "string_wrapped"
 version = "0.1.0"
 authors = ["Niclas Rosengren <niclas.rosengren@gmail.com>"]
 edition = "2018"
+license = "MIT"
+repository = "https://github.com/nicrgren/string_wrapped_rs"
+description = "Tiny library to easily handle deserialization of different types that are serialized to strings"
+
 
 [dependencies]
 serde = "1.0.92"
