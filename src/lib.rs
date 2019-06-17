@@ -2,6 +2,12 @@ use std::{cmp, fmt, str::FromStr};
 
 pub struct StringWrapped<T>(pub T);
 
+impl<T> From<T> for StringWrapped<T> {
+    fn from(v: T) -> Self {
+        StringWrapped(v)
+    }
+}
+
 impl<T> AsRef<T> for StringWrapped<T> {
     fn as_ref(&self) -> &T {
         &self.0
@@ -42,6 +48,8 @@ where
         StringWrapped(self.0.clone())
     }
 }
+
+impl<T> Copy for StringWrapped<T> where T: Copy {}
 
 // impl<T, Rhs> cmp::PartialEq<Rhs> for StringWrapped<T>
 // where
